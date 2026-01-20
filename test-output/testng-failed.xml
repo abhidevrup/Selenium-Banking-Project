@@ -6,8 +6,8 @@
       <class name="com.ibm.banking.runners.TestRunner">
         <methods>
           <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="1 2 7 8 9"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="1 2"/>
         </methods>
       </class> <!-- com.ibm.banking.runners.TestRunner -->
     </classes>

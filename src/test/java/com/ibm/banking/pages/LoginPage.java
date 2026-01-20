@@ -12,6 +12,8 @@ public class LoginPage extends BasePage{
 	private By password = By.id("password");
 	private By login = By.cssSelector("button[type='submit']");
 	
+	private By accessDeniedMsg = By.xpath("//p[contains(text(),'Access Denied')]");	   
+	
 	public void open() {
 		DriverFactory.getDriver().get(ConfigReader.get("baseUrl"));
 	}
@@ -21,4 +23,9 @@ public class LoginPage extends BasePage{
 		type(password,pass);
 		click(login);
 	}
+	
+	public String getErrorMessage() {
+        return getText(accessDeniedMsg);
+    }
+
 }
