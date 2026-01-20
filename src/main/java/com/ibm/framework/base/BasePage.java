@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -48,6 +49,13 @@ public class BasePage {
 	protected void jsClick(By locator) {
 		WebElement element = waitForVisible(locator);
 		((JavascriptExecutor)DriverFactory.getDriver()).executeScript("arguments[0].click();",element);
+	}
+	
+	protected void hover(By locator)
+	{
+		WebElement element=waitForVisible(locator);
+		Actions act=new Actions(DriverFactory.getDriver());
+		act.moveToElement(element).perform();
 	}
 	
 

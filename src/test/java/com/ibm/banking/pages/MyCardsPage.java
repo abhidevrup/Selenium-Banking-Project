@@ -13,6 +13,7 @@ public class MyCardsPage extends BasePage {
 	// Add/Manage Card Elements
 	private By addDebitButton = By.xpath("/html/body/div[2]/main/section[1]/div[2]/div[2]/button");
 	private By provisionCardBtn = By.xpath("//button[normalize-space()='Provision Card']");
+	private By cardArea = By.xpath("//div[@class='space-y-6']/div[2]/div");
 
 	// Inputs
 	private By cardNumberInput = By.cssSelector("input[placeholder='CARD NUMBER']");
@@ -21,9 +22,9 @@ public class MyCardsPage extends BasePage {
 	private By cvvInput        = By.cssSelector("input[placeholder='CVV']");
 
 	// Error & Delete
-	private By errorMessage    = By.xpath("//p[@class='text-");
+	private By errorMessage    = By.xpath("//form/p");
 	private By deleteCreditBtn = By.xpath("(//button[@class='absolute -top-3 -right-3 p-2.5 bg-red-500 text-white rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all hover:bg-red-600 focus:opacity-100 scale-75 group-hover:scale-100 z-20 border-4 border-white'])[1]");
-	private By addCreditSlot   = By.xpath("//button[@class='w-full aspect-/50 transition-all group overflow-hidden relative']");
+	private By addCreditSlot   = By.xpath("//div[@class='text-center']/span[1]");
 
 	// Navigation (If not already in DashboardPage)
 	private By myCardsLink     = By.xpath("//body//main//div[4]");
@@ -41,6 +42,10 @@ public class MyCardsPage extends BasePage {
 
 	public String getAvailableCredit() {
 		return getText(availableCreditText);
+	}
+	
+	public String getCreditSlotMessage() {
+		return getText(addCreditSlot);
 	}
 
 	public void clickAddDebit() {
@@ -76,11 +81,9 @@ public class MyCardsPage extends BasePage {
 	}
 
 	public void clickDeleteCreditCard() {
-		
+		hover(cardArea);
 		click(deleteCreditBtn); 
 	}
 
-	public boolean isCreditSlotEmpty() {
-		return isDisplayed(addCreditSlot);
-	}
+	
 }

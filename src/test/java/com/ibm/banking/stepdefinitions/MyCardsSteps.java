@@ -104,6 +104,6 @@ public class MyCardsSteps {
 
     @Then("the Credit Card slot should be empty")
     public void verify_slot_empty() {
-        Assert.assertTrue(myCardsPage.isCreditSlotEmpty(), "Credit Card slot is not empty");
+        Assert.assertEquals(myCardsPage.getCreditSlotMessage(),"ADD CREDIT", "Credit Card slot is not empty");
     }
 }
