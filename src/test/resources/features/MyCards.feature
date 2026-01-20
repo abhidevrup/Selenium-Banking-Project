@@ -1,3 +1,4 @@
+@regression @mycards
 Feature: TDDBank Card Dashboard
   # This feature file describes how a user interacts with the Cards page.
 
@@ -5,13 +6,15 @@ Feature: TDDBank Card Dashboard
   	Given I am logged into TDDBank
     #Given I open the TDDBank Dashboard
     And I navigate to the "My Cards" section
-
+  
+  @regression
   Scenario: Verify Dashboard Numbers
     # We want to make sure the money shown on the screen is correct
     Then I should see Total Spending as "₹12,840"
     And I should see Available Credit as "₹50,000"
 
-  Scenario Outline: Add a New Debit Card
+  @regression @addCard
+  Scenario Outline: Add a new Debit Card
     # We test adding a card with valid and invalid data
     When I click the "Add Debit" button
     And I enter card number "<CardNumber>"
@@ -27,7 +30,8 @@ Feature: TDDBank Card Dashboard
       | 1234             | John Doe   | 12/28  | 123 | Invalid card number length|
       | 5421889012345678 |            | 12/28  | 123 | Cardholder name required |
       | 5421889012345678 | John Doe   | 12/28  |     | CVV required              |
-
+  
+  @regression @deleteCard
   Scenario: Delete the Credit Card
     When I delete the existing Credit Card
     Then the Credit Card slot should be empty

@@ -1,3 +1,4 @@
+@regression @accSettings
 Feature: Account Settings Page Functionality
 
   Background: 
@@ -6,6 +7,7 @@ Feature: Account Settings Page Functionality
     
     And the user navigates to "Account Settings" from the navbar
 
+  @regression
   Scenario: Verify UI layout and section visibility
     Then the user should be redirected to the settings page
     And the following sections should be visible:
@@ -13,7 +15,8 @@ Feature: Account Settings Page Functionality
       | Personal Details  | Visible    |
       | Security          | Visible    |
       | Account Type      | Visible    |
-    
+  
+  @regression @updateProfile 
   Scenario Outline: Successfully update profile information
     When the user clicks the "Edit" option for "Personal and Contact Info"
     And the user updates the "<Field>" field with "<NewValue>"
