@@ -17,31 +17,32 @@ public final class ScreenshotUtils {
     /**
      * Captures screenshot and returns file path
      */
-    public static String takeScreenshot(String testName) {
+public static String takeScreenshot(String testName) {
 
-        String timestamp =
-                new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+    String timestamp =
+            new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
-        String screenshotDir =
-                System.getProperty("user.dir") + "/target/screenshots/";
+    String screenshotDir =
+            System.getProperty("user.dir") + "/target/screenshots/";
 
-        String screenshotPath =
-                screenshotDir + testName + "_" + timestamp + ".png";
+    String screenshotName =
+            testName + "_" + timestamp + ".png";
 
-        try {
-            File src =
-                    ((TakesScreenshot) DriverFactory.getDriver())
-                            .getScreenshotAs(OutputType.FILE);
+    String absolutePath = screenshotDir + screenshotName;
 
-            File dest = new File(screenshotPath);
-            dest.getParentFile().mkdirs();
+    try {
+        File src =
+                ((TakesScreenshot) DriverFactory.getDriver())
+                        .getScreenshotAs(OutputType.FILE);
 
-            Files.copy(src.toPath(), dest.toPath());
+        File dest = new File(absolutePath);
+        dest.getParentFile().mkdirs();
+        Files.copy(src.toPath(), dest.toPath());
 
-        } catch (Exception e) {
-            System.out.println("Screenshot capture failed: " + e.getMessage());
-        }
-
-        return screenshotPath;
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    return "../screenshots/" + screenshotName;
+}
+
 }
