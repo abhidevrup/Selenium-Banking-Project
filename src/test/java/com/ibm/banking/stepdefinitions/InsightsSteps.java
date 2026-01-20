@@ -58,13 +58,21 @@ public class InsightsSteps {
         insightsPage.clickFilterByMonth();
     }
 
-    @Then("the filter by month dropdown should be visible")
-    public void filter_dropdown_should_be_visible() {
-        Assert.assertTrue(
-                insightsPage.isFilterDropdownVisible(),
-                "Filter by month dropdown not visible"
-        );
+    @Then("the user should be able to select a month")
+    public void user_should_be_able_to_select_month() {
+        insightsPage.selectMonth("January");
     }
+    
+    @When("the user clicks on Filter by Year")
+    public void user_clicks_filter_by_year() {
+        insightsPage.clickFilterByYear();
+    }
+    
+    @Then("the user should be able to select a year")
+    public void user_should_be_able_to_select_a_year() {
+        insightsPage.selectYear("2025");
+    }
+    
 
     @Then("the Week Month Year buttons should be clickable")
     public void week_month_year_buttons_should_be_clickable() {

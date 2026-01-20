@@ -1,8 +1,10 @@
 package com.ibm.banking.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 import com.ibm.framework.base.BasePage;
+import com.ibm.framework.driver.DriverFactory;
 
 public class InsightsPage extends BasePage {
 
@@ -11,17 +13,13 @@ public class InsightsPage extends BasePage {
 
     // View all transactions
     private By viewAllTransactionsBtn =
-            By.xpath("//a[contains(text(),'View All Transactions')]");
-
-    private By transactionsSection =
-            By.xpath("//h2[contains(text(),'Recent Transactions')]");
+            By.xpath("//button[contains(text(),'View All Transactions')]");
 
     // Filters
-    private By filterByMonthDropdown =
-            By.xpath("//button[contains(text(),'All Months')]");
+    By filterByMonthSelect = By.xpath("//label[text()='Filter by Month:']/following-sibling::select");
+    private By filterByYearSelect =
+            By.xpath("//label[text()='Filter by Year:']/following-sibling::select");
 
-    private By filterDropdownPanel =
-            By.xpath("//div[contains(@class,'dropdown')]");
 
     // Time range buttons
     private By weekBtn  = By.xpath("//button[text()='Week']");
@@ -39,20 +37,36 @@ public class InsightsPage extends BasePage {
     }
 
     public boolean isTransactionsSectionVisible() {
-        return isDisplayed(transactionsSection);
+        return DriverFactory.getDriver().getCurrentUrl().contains("transactions");
     }
 
     public void clickFilterByMonth() {
-        click(filterByMonthDropdown);
+        click(filterByMonthSelect);
+    }
+    
+    public void clickFilterByYear() {
+        click(filterByYearSelect);
     }
 
-    public boolean isFilterDropdownVisible() {
-        return isDisplayed(filterDropdownPanel);
+    public void selectMonth(String month) {
+        Select select = new Select(waitForVisible(filterByMonthSelect));
+        select.selectByVisibleText(month);
+    }
+    
+    public void selectYear(String year) {
+        Select select = new Select(waitForVisible(filterByYearSelect));
+        select.selectByVisibleText(year);
     }
 
     public boolean areTimeRangeButtonsClickable() {
-        return isDisplayed(weekBtn)
-                && isDisplayed(monthBtn)
-                && isDisplayed(yearBtn);
+        try {
+            click(weekBtn);
+            click(monthBtn);
+            click(yearBtn);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
+
 }

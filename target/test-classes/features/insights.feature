@@ -1,3 +1,4 @@
+@insights
 Feature: Financial Insights Page validation
 
   Background:
@@ -13,7 +14,11 @@ Feature: Financial Insights Page validation
 
   Scenario: Filter by Month dropdown should open
     When the user clicks on Filter by Month
-    Then the filter by month dropdown should be visible
+    Then the user should be able to select a month
+   
+  Scenario:Filter by Year dropdown should open
+  	When the user clicks on Filter by Year
+  	Then the user should be able to select a year
 
   Scenario: Week Month Year buttons should be clickable
     Then the Week Month Year buttons should be clickable
