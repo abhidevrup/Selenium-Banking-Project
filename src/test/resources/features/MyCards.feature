@@ -24,7 +24,9 @@ Feature: TDDBank Card Dashboard
     Examples:
       | CardNumber       | HolderName | Expiry | CVV | ExpectedMessage          |
       | 5421889012345678 | John Doe   | 12/28  | 123 | Card Added Successfully  |
-      
+      | 1234             | John Doe   | 12/28  | 123 | Invalid card number length|
+      | 5421889012345678 |            | 12/28  | 123 | Cardholder name required |
+      | 5421889012345678 | John Doe   | 12/28  |     | CVV required              |
 
   Scenario: Delete the Credit Card
     When I delete the existing Credit Card
