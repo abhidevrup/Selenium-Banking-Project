@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 19 16:55:51 IST 2026</td>
+<td>Started on:</td><td>Tue Jan 20 00:50:50 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16539 ms)</td>
+<tr><td>Total time:</td><td>82 seconds (82319 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,79 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Filter by Month dropdown should open", "Financial Insights Page validation"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(),&apos;All Months&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.1, moz:accessibilityChecks: false, moz:buildID: 20260116091309, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27800, moz:profile: C:\Users\DEBOJI~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 1f78ac5d-fa69-4863-9731-a360ecae21e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.ibm.framework.base.BasePage.waitForClickable(BasePage.java:22)
+	at com.ibm.framework.base.BasePage.click(BasePage.java:26)
+	at com.ibm.banking.pages.InsightsPage.clickFilterByMonth(InsightsPage.java:46)
+	at com.ibm.banking.stepdefinitions.InsightsSteps.user_clicks_filter_by_month(InsightsSteps.java:58)
+	at ✽.the user clicks on Filter by Month(file:///C:/Users/DebojitBhattacharjee/eclipse-automation-workspace/com.ibm.BankingProject/src/test/resources/features/insights.feature:15)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1786872722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1786872722'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(),&apos;All Months&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.1, moz:accessibilityChecks: false, moz:buildID: 20260116091309, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 27800, moz:profile: C:\Users\DEBOJI~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 1f78ac5d-fa69-4863-9731-a360ecae21e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.ibm.framework.base.BasePage.waitForClickable(BasePage.java:22)
+	at com.ibm.framework.base.BasePage.click(BasePage.java:26)
+	at com.ibm.banking.pages.InsightsPage.clickFilterByMonth(InsightsPage.java:46)
+	at com.ibm.banking.stepdefinitions.InsightsSteps.user_clicks_filter_by_month(InsightsSteps.java:58)
+	at ✽.the user clicks on Filter by Month(file:///C:/Users/DebojitBhattacharjee/eclipse-automation-workspace/com.ibm.BankingProject/src/test/resources/features/insights.feature:15)
+</pre></div></td>
+<td>20</td>
+<td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
+<tr>
+<td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "View All Transactions button should work", "Financial Insights Page validation"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(text(),&apos;View All Transactions&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.1, moz:accessibilityChecks: false, moz:buildID: 20260116091309, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26436, moz:profile: C:\Users\DEBOJI~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: c3774e66-ba40-4a22-b232-fdbd98e80fb2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.ibm.framework.base.BasePage.waitForClickable(BasePage.java:22)
+	at com.ibm.framework.base.BasePage.click(BasePage.java:26)
+	at com.ibm.banking.pages.InsightsPage.clickViewAllTransactions(InsightsPage.java:38)
+	at com.ibm.banking.stepdefinitions.InsightsSteps.user_clicks_view_all_transactions(InsightsSteps.java:45)
+	at ✽.the user clicks on View All Transactions(file:///C:/Users/DebojitBhattacharjee/eclipse-automation-workspace/com.ibm.BankingProject/src/test/resources/features/insights.feature:11)
+</pre></div><a href='#' onClick='toggleBox("stack-trace638204510", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace638204510'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(text(),&apos;View All Transactions&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 147.0.1, moz:accessibilityChecks: false, moz:buildID: 20260116091309, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 26436, moz:profile: C:\Users\DEBOJI~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: c3774e66-ba40-4a22-b232-fdbd98e80fb2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.ibm.framework.base.BasePage.waitForClickable(BasePage.java:22)
+	at com.ibm.framework.base.BasePage.click(BasePage.java:26)
+	at com.ibm.banking.pages.InsightsPage.clickViewAllTransactions(InsightsPage.java:38)
+	at com.ibm.banking.stepdefinitions.InsightsSteps.user_clicks_view_all_transactions(InsightsSteps.java:45)
+	at ✽.the user clicks on View All Transactions(file:///C:/Users/DebojitBhattacharjee/eclipse-automation-workspace/com.ibm.BankingProject/src/test/resources/features/insights.feature:11)
+</pre></div></td>
+<td>21</td>
+<td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,14 +149,24 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Navbar should be visible on Insights page", "Financial Insights Page validation"</td>
+<td></td>
+<td>12</td>
+<td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
+<tr>
 <td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with different credentials", "Login Functionality for TDDBank"</td>
+<td></td>
+<td>12</td>
+<td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
+<tr>
+<td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Week Month Year buttons should be clickable", "Financial Insights Page validation"</td>
 <td></td>
 <td>7</td>
 <td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
 <tr>
 <td title='com.ibm.banking.runners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.ibm.banking.runners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with different credentials", "Login Functionality for TDDBank"</td>
 <td></td>
-<td>8</td>
+<td>7</td>
 <td>com.ibm.banking.runners.TestRunner@3d285d7e</td></tr>
 </table><p>
 </body>
